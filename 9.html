@@ -1,0 +1,60 @@
+
+<html>
+<head>
+<title>Sayı Tahmin Oyunu</title>
+<style>
+ 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+body {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		width: 100%;
+		background-color:purple;
+	}
+
+input{
+
+		margin:auto;
+		font-size: xx-large;
+		font-weight:bold;
+		background-color:purple;
+		color:yellow;
+		border:2 px solid black;
+
+}
+div{
+	display:block;
+} 
+ 
+ </style>
+ 
+</head>
+<body>
+
+<script type="text/javascript">
+
+function newPagee()
+ {
+  window.location.assign("7.html")
+ }
+
+</script>
+<div id="puans" style="color:White;font-size:16rem;text-align:center;width:100%;"></div>
+<div>
+<input type="button" onClick="newPagee()" value="BAŞLA" /></div>
+
+</body>
+</html>
+
+<script>
+	var bbb = window.location.href.split("?");
+	var puan = bbb[1].substring(5, bbb[1].length);
+	document.getElementById("puans").innerHTML = puan;	
+ </script>

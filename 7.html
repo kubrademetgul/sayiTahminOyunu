@@ -1,0 +1,151 @@
+<html>
+<head>
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+    crossorigin="anonymous"> 
+<style>
+ 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+body {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		width: 100%;
+		background-color:purple;
+	}
+.container{
+		width: 58rem;
+		height: 30rem;
+}
+
+#sayi{
+		width:100%;
+		height:75%;
+		font-size: 3rem;
+		background-color:#00BFFF;
+		border:1px solid black;
+		align-items: center;
+		justify-content:center;
+		display: flex;
+	}
+input{
+		display:flex;
+		font-size: xx-large;
+		font-weight:bold;
+		background-color:purple;
+		color:yellow;
+		border:2 px solid black;
+	}
+.sayi-container{
+    width: 60%;
+    min-height: 80vh;
+    border-radius: 0.5rem;
+    position: relative;
+    margin: 4rem auto;
+  
+
+}
+.btn-left{
+    
+    position: absolute;
+    top: 50%;
+    left: 0;
+    color: #fff;
+    background-color: red;
+    transform: translate(-50%, -50%);
+    border: 0.2rem;
+    font-size: 1.5rem;
+    padding: 15px;
+    cursor: pointer;
+}
+.btn-right{ 
+    position: absolute;
+    top: 50%;
+    right: 0;
+    color: #fff;
+    background-color: #3B711E;
+    transform: translate(50%, -50%);
+    border: 0.2rem;
+    font-size: 1.5rem;
+    padding: 15px;
+    cursor: pointer;
+}
+
+
+</style>
+</head>
+<body>
+
+<div id="genelDiv" style="width:100%;height:100%;">
+<div class=sayi-container>
+<input id ="puan" value="0" readonly></input>
+
+<div class="container" id="sayi">
+<div class="sayi"></div>
+</div>
+	<a class="btn btn-left"><i class="fas fa-caret-left"  id="sol"></i></a>
+    <a class="btn btn-right"><i class="fas fa-caret-right"  id ="sag"></i></a>
+</div>
+
+</div>
+
+<script>
+
+Sayi=document.getElementById("sayi");
+s = Math.round(Math.random()*100);
+Sayi.innerHTML=s;
+
+
+sagTik=document.getElementById("sag");
+sagTik.onclick=function(){
+
+	
+	Sayi=document.getElementById("sayi");
+	a=Math.round(Math.random()*100);
+	Sayi.innerHTML=a; 
+	sonuc=document.getElementById("sonuc");
+
+	if(a>s){
+	deger = parseInt(document.getElementById("puan").value);
+    document.getElementById("puan").value = deger + 1;
+
+	}
+	else
+	{
+	window.location.assign("9.html?puan="+(deger+1));
+	alert("Oyun Bitti");
+	
+
+	}
+
+}
+	solTik=document.getElementById("sol");
+	solTik.onclick=function() {
+	Sayi=document.getElementById("sayi");
+	b=Math.round(Math.random()*100);
+	Sayi.innerHTML=b;
+	
+	if(b<s){
+	deger = parseInt(document.getElementById("puan").value);
+    document.getElementById("puan").value = deger - 1;
+	}
+	
+	else
+	{
+    window.location("9.html?puan="+deger);
+	alert("Oyun Bitti");
+	
+	}
+}
+
+
+</script>
+</body>
+
+</html>
